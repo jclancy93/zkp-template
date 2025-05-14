@@ -79,22 +79,12 @@ VITE_API_URL="http://localhost:8080" # Adjust if your API runs on a different po
 Install project dependencies using pnpm:
 
 ```bash
-pnpm install
+pnpm install -r
 ```
 This command will install dependencies for the root project and all applications within the `apps/` directory.
 
 ### Running the Applications
-
-1.  **Start all applications in development mode:**
-
-    ```bash
-    pnpm run start:app:dev
-    ```
-    This will concurrently start:
-    *   The Frontend (React/Vite) - typically on `http://localhost:5173` (check terminal output)
-    *   The API (Express.js) - typically on `http://localhost:8080` (or the `PORT` you specified)
-
-2.  **Deploy Smart Contracts (to Base Sepolia):**
+1.  **Deploy Smart Contracts (to Base Sepolia):**
 
     Before the frontend can interact with the smart contract, you need to deploy it.
     Ensure your `.env` file has the `BASE_SEPOLIA_RPC_URL`, `DEPLOYER_PRIVATE_KEY`, and `ETHERSCAN_API_KEY` correctly set.
@@ -108,14 +98,14 @@ This command will install dependencies for the root project and all applications
     *   Attempt to verify them on Basescan.
     *   Update your root `.env` file with `BASE_SEPOLIA_VERIFY_CONTRACT_ADDRESS` and `VITE_BASE_SEPOLIA_VERIFY_CONTRACT_ADDRESS`.
 
-    After deployment, the frontend should automatically pick up the new contract address if it's already running (due to Vite's HMR and env variable handling). If not, you might need to restart the frontend development server.
+2.  **Start all applications in development mode:**
 
-### Development Workflow
+    ```bash
+    pnpm run start:app:dev
+    ```
+    This will concurrently start:
+    *   The Frontend (React/Vite) - typically on `http://localhost:5173` (check terminal output)
+    *   The API (Express.js) - typically on `http://localhost:8080` (or the `PORT` you specified)
 
-1.  Set up your `.env` file.
-2.  Run `pnpm install`.
-3.  Run `pnpm run deploy:contracts` to deploy/update contracts.
-4.  Run `pnpm run start:app:dev` to start the frontend and API.
-5.  Open the frontend URL in your browser and interact with the application.
 
 Each application within the `apps/` directory also contains its own `README.md` and `package.json` for more specific instructions and details. 
