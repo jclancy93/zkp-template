@@ -1,0 +1,62 @@
+# Generic ignores
+*.DS_Store
+Thumbs.db
+.cache
+.temp
+*.local
+.env
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# IDE & Editor specific
+.idea/
+.vscode/*
+!.vscode/extensions.json
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Dependencies / Build artifacts
+node_modules/
+
+# --- Root .gitignore (Original) ---
+.env # From original root .gitignore
+
+# --- API (apps/api) ---
+apps/api/node_modules/
+apps/api/.env
+apps/api/.cache
+apps/api/.temp
+apps/api/.DS_Store # Though .DS_Store is global, keeping specific if intended
+
+# --- Frontend (apps/frontend) ---
+apps/frontend/logs/ # specific logs dir for frontend
+apps/frontend/*.log # specific log files for frontend
+apps/frontend/npm-debug.log*
+apps/frontend/yarn-debug.log*
+apps/frontend/yarn-error.log*
+apps/frontend/pnpm-debug.log*
+apps/frontend/lerna-debug.log*
+
+apps/frontend/node_modules/
+apps/frontend/dist/
+apps/frontend/dist-ssr/
+apps/frontend/*.local
+
+
+# --- Contracts (apps/contracts) ---
+apps/contracts/node_modules/
+apps/contracts/.env
+
+# Hardhat files
+apps/contracts/cache/
+apps/contracts/artifacts/

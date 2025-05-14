@@ -1,0 +1,21 @@
+{
+  "name": "zkp-template",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "deploy:contracts": "cd apps/contracts && npx hardhat compile && npx hardhat deploy-verify-base-sepolia --network baseSepolia",
+    "start:app:dev": "pnpm -r dev"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "packageManager": "pnpm@10.4.1",
+  "pnpm": {
+    "ignoredBuiltDependencies": [
+      "esbuild"
+    ],
+    "neverBuiltDependencies": []
+  }
+}
