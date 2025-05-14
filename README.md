@@ -40,9 +40,10 @@ This section guides you through setting up and running the project locally.
 
 *   **Node.js and pnpm**: Ensure you have Node.js (v18 or higher recommended) and pnpm (v10.4.1 or as specified in `packageManager` in `package.json`) installed.
 *   **Wallet**: A compatible Ethereum wallet (like MetaMask) configured for the Base Sepolia test network.
-*   **Base Sepolia ETH**: You'll need Base Sepolia ETH in your deployer account to deploy contracts and pay for gas fees.
+*   **Base Sepolia ETH**: You'll need Base Sepolia ETH in your deployer account to deploy contracts and pay for gas fees. [Coinbase has a faucet](https://portal.cdp.coinbase.com/products/faucet) for getting funds
 *   **Reclaim Protocol Credentials**: Sign up at [Reclaim Protocol Developer Portal](https://dev.reclaimprotocol.org/) to get an `APP_ID` and `API_SECRET`.
 *   **Basescan API Key**: Obtain an API key from [Basescan](https://basescan.org/) if you want to verify your deployed contracts.
+*   **RPC URL**: Obtain a Base Sepolia RPC URL from a provider like Alchemy or Infura
 
 ### Environment Setup
 
