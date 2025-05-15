@@ -1,3 +1,8 @@
+![alt text][logo]
+
+[logo]: https://cdn.prod.website-files.com/64053c5d931f167ecf5997be/679bd8d1dd7833b60efb0ca0_EigenLayer-logo.svg "EigenLayer Logo"
+
+
 # ZKP Template Project
 
 This project is a template for building applications leveraging zero-knowledge proofs. It's structured as a monorepo with distinct applications for handling smart contracts, frontend interface, and backend API logic.
@@ -43,7 +48,7 @@ This section guides you through setting up and running the project locally.
 *   **Base Sepolia ETH**: You'll need Base Sepolia ETH in your deployer account to deploy contracts and pay for gas fees. [Coinbase has a faucet](https://portal.cdp.coinbase.com/products/faucet) for getting funds
 *   **Reclaim Protocol Credentials**: Sign up at [Reclaim Protocol Developer Portal](https://dev.reclaimprotocol.org/) to get an `APP_ID` and `API_SECRET`.
 *   **Basescan API Key**: Obtain an API key from [Basescan](https://basescan.org/) if you want to verify your deployed contracts.
-*   **RPC URL**: Obtain a Base Sepolia RPC URL from a provider like Alchemy or Infura
+*   **RPC URL**: Obtain a Base Sepolia RPC URL from a provider like Alchemy or Infura. You can also use the free Base RPC [here](https://sepolia.base.org)
 
 ### Environment Setup
 
@@ -57,6 +62,9 @@ Create a `.env` file in the project root with the following content:
 BASE_SEPOLIA_RPC_URL="YOUR_BASE_SEPOLIA_RPC_URL"
 DEPLOYER_PRIVATE_KEY="YOUR_DEPLOYER_WALLET_PRIVATE_KEY"
 ETHERSCAN_API_KEY="YOUR_BASESCAN_API_KEY" # For contract verification on Basescan
+
+# Required by the frontend (e.g., Wagmi config) to connect to Base Sepolia
+VITE_BASE_SEPOLIA_RPC_URL="YOUR_BASE_SEPOLIA_RPC_URL" # Same as above, but prefixed for Vite
 
 # Required for the Reclaim Protocol integration in the API
 RECLAIM_APP_ID="YOUR_RECLAIM_APP_ID"
@@ -110,3 +118,12 @@ This command will install dependencies for the root project and all applications
 
 
 Each application within the `apps/` directory also contains its own `README.md` and `package.json` for more specific instructions and details. 
+
+
+### Learn More About Building on EigenLayer
+
+Eigenlayer empowers developers to build more expressive and verfiable blockchain apps than ever before
+
+* [Intro to EigenLayer](https://docs.eigenlayer.xyz/eigenlayer/overview/)
+* [Docs](https://docs.eigenlayer.xyz/)
+* [App Ecosystem](https://app.eigenlayer.xyz/apps)
