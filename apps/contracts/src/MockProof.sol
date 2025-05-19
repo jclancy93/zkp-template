@@ -4,7 +4,7 @@ pragma solidity ^0.8.4;
 // Import the Reclaim contract to access the Reclaim.Proof struct definition
 import { Reclaim } from "@reclaimprotocol/verifier-solidity-sdk/contracts/Reclaim.sol";
 
-contract MockZkTLS {
+contract MockProof {
     // This function stubs the real Reclaim.verifyProof.
     // It now takes the correct Reclaim.Proof struct as an argument.
     // It should not revert, to simulate a successful verification.
