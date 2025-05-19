@@ -5,4 +5,7 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   plugins: [react()],
   envDir: '../../', // Point to the workspace root for .env files
+  server: {
+    allowedHosts: true,
+  },
 })
