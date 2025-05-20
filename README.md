@@ -2,10 +2,13 @@
 
 [logo]: https://cdn.prod.website-files.com/64053c5d931f167ecf5997be/679bd8d1dd7833b60efb0ca0_EigenLayer-logo.svg "EigenLayer Logo"
 
+[![Remix on Replit](https://replit.com/badge?theme=dark)](https://replit.com/t/eigenlabs/repls/zkp-template/view#README.md)
 
 # ZKP Template Project
 
 This project is a template for building applications leveraging zero-knowledge proofs. It's structured as a monorepo with distinct applications for handling smart contracts, frontend interface, and backend API logic.
+
+Demo here: https://zkp-template-eigen.replit.app
 
 ## Project Structure
 
