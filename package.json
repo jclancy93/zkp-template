@@ -17,5 +17,8 @@
       "esbuild"
     ],
     "neverBuiltDependencies": []
+  },
+  "dependencies": {
+    "wagmi": "^2.15.4"
   }
 }

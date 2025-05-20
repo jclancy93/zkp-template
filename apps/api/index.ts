@@ -31,10 +31,10 @@ app.get('/', (_: Request, res: Response) => {
     res.send('gm gm! api is running');
 });
 
-app.get('/generateProof', async (_: Request, res: Response) => {
+app.get('/generateProof', async (req: Request, res: Response) => {
     try{
         // URL to fetch the data from - in this case, the price of Ethereum in USD from the CoinGecko API
-        const url = 'https://api.coingecko.com/api/v3/simple/price?ids=ethereum&vs_currencies=usd';
+        const url = req.query.url as string;
 
         /*    
         * Fetch the data from the API and generate a proof for the response. 
@@ -43,12 +43,16 @@ app.get('/generateProof', async (_: Request, res: Response) => {
         const proof = await reclaimClient.zkFetch(url, {
           // public options for the fetch request 
           method: 'GET',
+          context: {
+            contextAddress: "0x0000000000000000000000000000000000000000",
+            contextMessage: url
+          }
         }, {
           // options for the proof generation
           responseMatches: [
             {
                 "type": "regex",
-                "value": "\\{\"ethereum\":\\{\"usd\":(?<price>[\\d\\.]+)\\}\\}"
+                "value": '"winner":\\s*(?<theWinner>true|false)'  
             }
           ],
         });

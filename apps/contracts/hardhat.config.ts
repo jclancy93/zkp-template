@@ -12,6 +12,7 @@ import { task } from "hardhat/config";
 import { HardhatRuntimeEnvironment } from "hardhat/types";
 
 const BASE_SEPOLIA_RECLAIM_CONTRACT_ADDRESS = "0xF90085f5Fd1a3bEb8678623409b3811eCeC5f6A5";
+const USDC_ADDRESS = "0x036CbD53842c5426634e7929541eC2318f3dCF7e";
 
 task("deploy-verify-base-sepolia", "Deploys the Verify contract to the Base Sepolia network")
   .setAction(async (taskArgs: any, hre: HardhatRuntimeEnvironment) => {
@@ -23,7 +24,7 @@ task("deploy-verify-base-sepolia", "Deploys the Verify contract to the Base Sepo
 
     console.log("Deploying Verify contract to Base Sepolia network...");
     // Deploy the Verify contract and link the Claims library
-    const verifyContract = await hre.viem.deployContract("Verify", [BASE_SEPOLIA_RECLAIM_CONTRACT_ADDRESS], {
+    const verifyContract = await hre.viem.deployContract("BettingMarket", [USDC_ADDRESS, BASE_SEPOLIA_RECLAIM_CONTRACT_ADDRESS], {
       libraries: {
         // The key here must match the fully qualified name of the library as expected by Hardhat
         "@reclaimprotocol/verifier-solidity-sdk/contracts/Claims.sol:Claims": claimsLibrary.address
@@ -40,7 +41,7 @@ task("deploy-verify-base-sepolia", "Deploys the Verify contract to the Base Sepo
       console.log("Attempting Etherscan (Basescan) verification...");
       await hre.run("verify:verify", {
         address: verifyContract.address,
-        constructorArguments: [BASE_SEPOLIA_RECLAIM_CONTRACT_ADDRESS],
+        constructorArguments: [USDC_ADDRESS, BASE_SEPOLIA_RECLAIM_CONTRACT_ADDRESS],
         libraries: {
           // The library name here should match how it's linked in the Verify contract.
           // Assuming it is just 'Claims' based on common usage with external libraries.
@@ -48,7 +49,7 @@ task("deploy-verify-base-sepolia", "Deploys the Verify contract to the Base Sepo
           // then this key should be 'ClaimsLib'.
           "Claims": claimsLibrary.address 
         },
-        contract: "src/Verify.sol:Verify" // Adjusted fully qualified name
+        contract: "src/BettingMarket.sol:BettingMarket" // Adjusted fully qualified name
       });
       console.log("Etherscan verification successful.");
     } catch (error) {
